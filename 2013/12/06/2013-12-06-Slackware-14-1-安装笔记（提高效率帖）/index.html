@@ -1,34 +1,260 @@
-extends _partial/layout.pug
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block content
-  - var post = page
-  #post
-    article.post-block(itemscope, itemtype='https://schema.org/Article')
-      include _partial/post/post-schema.pug
-      if post.type
-        - post_type = getPropertyByType(post.type)
-      header.post-header
-        h1.post-title(itemprop='name headline', style=post.type ? `color: ${post_type.color}` : '')
-          if post.type
-            +icon(post_type.icon)
-          | #{post.title}
+  
+  <title>Slackware 14.1 安装日记（提高效率帖） | 后知后觉的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Slackware社区近年终于给slackware文档机制做了一个不错的贡献，那就是docs.slackware.com，现在有了类似arch wiki的东西了，所以安装照理说应该没啥大问题了。 记录几点特殊的：  现在保持英文界面，看中文网页已经完全不需要配置就OK了；至于输入法，推荐上slackbuild自己转个fcitx来装，并slackpkg search并卸载掉scim，因为fcitx会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Slackware 14.1 安装日记（提高效率帖）">
+<meta property="og:url" content="http://example.com/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/index.html">
+<meta property="og:site_name" content="后知后觉的博客">
+<meta property="og:description" content="Slackware社区近年终于给slackware文档机制做了一个不错的贡献，那就是docs.slackware.com，现在有了类似arch wiki的东西了，所以安装照理说应该没啥大问题了。 记录几点特殊的：  现在保持英文界面，看中文网页已经完全不需要配置就OK了；至于输入法，推荐上slackbuild自己转个fcitx来装，并slackpkg search并卸载掉scim，因为fcitx会">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-12-06T03:18:58.000Z">
+<meta property="article:modified_time" content="2019-12-12T08:37:22.737Z">
+<meta property="article:author" content="McHTD">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="slackware">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="后知后觉的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-          if theme.post_edit.enable
-            include _partial/post/post-edit.pug
+<meta name="generator" content="Hexo 5.1.1"></head>
 
-        include _partial/post/post-meta.pug
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">后知后觉的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2013-12-06-Slackware-14-1-安装笔记（提高效率帖）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" class="article-date">
+  <time datetime="2013-12-06T03:18:58.000Z" itemprop="datePublished">2013-12-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
 
-        if post.url
-          a.hty-button.hty-button--raised(href=url_for(post.url), style=`margin-top: 1rem;background-color:${post_type.color}`)=__('post.view_link')
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Slackware 14.1 安装日记（提高效率帖）
+    </h1>
+  
 
-      section.post-body(itemprop='articleBody')
-        .post-content.markdown-body(style=`--smc-primary:${theme.colors.primary};`)!=post.content
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Slackware社区近年终于给slackware文档机制做了一个不错的贡献，那就是docs.slackware.com，现在有了类似arch wiki的东西了，所以安装照理说应该没啥大问题了。</p>
+<p>记录几点特殊的：</p>
+<ol>
+<li><p>现在保持英文界面，看中文网页已经完全不需要配置就OK了；至于输入法，推荐上slackbuild自己转个fcitx来装，并slackpkg search并卸载掉scim，因为fcitx会在/etc/profile.d里面生成相应的modifier的sh文件供自动载入，以前需要手工的现在也不需要了，我们唯一需要改的就是local上改成UTF-8格式的。</p>
+</li>
+<li><p>如果想要google-chrome，也可以在slackbuild照要求拉，没必要去折腾chromium，windows上chrome还不是照用。原因如下：chromium需要申请一个api Key去编译，才能同步google账号，进行收藏夹同步等，没有了这个chrome基本上等同于废物，浏览器功能会大打折扣，而chromium对这个key管控其实挺严的，需要加入开发组去申请，普通使用真的没必要。 Chrome推荐几个插件，Adblock, goagent+Proxy SwitchySharp,以及最重要的Vimium，特别是Vimium，真正牛啊，H I J K移动页面，D/U上下翻，还有一个特别好的功能是用键盘打开网址：F和shift + F，然后页面的链接上出现各种字母和组合，然后输该字母回车就打开网页，Shift+hjkl在网页间移动，x关页面，T新增标签页，至少效率上感觉比firefox高，除了胖客户javascript网站，其它所有网站包括淘宝基本都能完全用键盘操作，有些难关难开的页可以用chrome内置快捷键辅助。</p>
+</li>
+<li><p>Tilling windows manager 在linux社区有一个新宠： i3 wm，google Tech视频居然有专门的视频报道，估计是内部人开发的，也算一奇葩；也是纯快捷方式操作，mod+D，输入goo，回车自动联想打开google-chrome，大部分x程序都可以这样打开，如果觉得还不够快还能自己绑定进入i3时自启和快捷键。mod+回车自动打开terminal（Mod键设为windows键)，窗口间移动也是类似vim，mod+j,k,l,; 不用h做左移是因为mod+H就代表打开新的东西接下来会在水平右边新增，如果是mod+v，就是下面新增；然后Mod+1-9就是切换工作区，shift+mod+q就是kill掉当前窗口，shift+mod+E就是退出i3。</p>
+</li>
+<li><p>无线网络推荐使用wicd，在光盘的extra上有，它区别于networkmanager一个最大的好处是启动服务后，有一个console上的配置界面，wicd-curs…（没记住全名，自己tab），也就是说，设置好后，无线网络无论在X还是console都能用，再也不用依赖蛋疼的X上的manager去配置和连接网络。</p>
+</li>
+</ol>
+<p>只想到这么多，以后有再补充。</p>
 
-        if theme.reward.enable && page.reward !== false
-          include _partial/post/reward.pug
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" data-id="ckf5mapb5000v5kng2zupe2ww" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slackware/" rel="tag">slackware</a></li></ul>
 
-        if theme.creative_commons.license && theme.creative_commons.post
-          include _partial/post/post-copyright.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          msysGit 和 Git for Windows 的关系
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">windows下编辑的vimrc文件在unix下乱码</div>
+    </a>
+  
+</nav>
 
-    if post.prev || post.next
-      include _partial/post/post-nav.pug
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/archlinux/" rel="tag">archlinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slackware/" rel="tag">slackware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%AE%E8%A1%8C/" rel="tag">修行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/archlinux/" style="font-size: 13.33px;">archlinux</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/slackware/" style="font-size: 13.33px;">slackware</a> <a href="/tags/%E4%BF%AE%E8%A1%8C/" style="font-size: 10px;">修行</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 20px;">知识点</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">八月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">五月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">十月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">五月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">三月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">十二月 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">十一月 2007</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/">论韧带松紧不平衡</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/">红牛v5 android cm12.1 分辨率修改</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/">msysGit 和 Git for Windows 的关系</a>
+          </li>
+        
+          <li>
+            <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/">Slackware 14.1 安装日记（提高效率帖）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 McHTD<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
