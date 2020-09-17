@@ -1,303 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends _partial/layout.pug
 
-  
-  <title>archlinux 2011.8.19 版安装和配置点滴 | 后知后觉的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装 1.使用core安装 2.安装设置中设置好IP、locale等，mirror使用sohu.com 3.安装完 pacman -Syu。发现不成功，查看官网news： a.pacman -S filesystem –force，因为filesystem-2011.12跟&#x2F;etc&#x2F;mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连">
-<meta property="og:type" content="article">
-<meta property="og:title" content="archlinux 2011.8.19 版安装和配置点滴">
-<meta property="og:url" content="http://example.com/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/index.html">
-<meta property="og:site_name" content="后知后觉的博客">
-<meta property="og:description" content="安装 1.使用core安装 2.安装设置中设置好IP、locale等，mirror使用sohu.com 3.安装完 pacman -Syu。发现不成功，查看官网news： a.pacman -S filesystem –force，因为filesystem-2011.12跟&#x2F;etc&#x2F;mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2012-05-05T08:56:48.000Z">
-<meta property="article:modified_time" content="2019-12-11T03:12:12.545Z">
-<meta property="article:author" content="McHTD">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="archlinux">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="后知后觉的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  - var post = page
+  #post
+    article.post-block(itemscope, itemtype='https://schema.org/Article')
+      include _partial/post/post-schema.pug
+      if post.type
+        - post_type = getPropertyByType(post.type)
+      header.post-header
+        h1.post-title(itemprop='name headline', style=post.type ? `color: ${post_type.color}` : '')
+          if post.type
+            +icon(post_type.icon)
+          | #{post.title}
 
-<meta name="generator" content="Hexo 5.1.1"></head>
+          if theme.post_edit.enable
+            include _partial/post/post-edit.pug
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">后知后觉的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-2012-05-05-archlinux-2011-8-19-版安装和配置点滴" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/" class="article-date">
-  <time datetime="2012-05-05T08:56:48.000Z" itemprop="datePublished">2012-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
+        include _partial/post/post-meta.pug
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      archlinux 2011.8.19 版安装和配置点滴
-    </h1>
-  
+        if post.url
+          a.hty-button.hty-button--raised(href=url_for(post.url), style=`margin-top: 1rem;background-color:${post_type.color}`)=__('post.view_link')
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>安装</p>
-<p>1.使用core安装</p>
-<p>2.安装设置中设置好IP、locale等，mirror使用sohu.com</p>
-<p>3.安装完 pacman -Syu。发现不成功，查看官网news：<br> a.pacman -S filesystem –force，因为filesystem-2011.12跟/etc/mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连接至/proc/self/mounts,这样initscripts不再需要访问rootfs。<br> b.手工删除 /etc/profile.d/locale.sh。新的filesystem可以使系统在locale更改后不用重启，只需要注销。</p>
-<p>4.配置机器启动中弹出选单选择自动连接什么网络（网线或无线网）。<br> a.安装netcfg, wireless_tools, wpa_supplicant,wpa_actiond<br> b.复制/etc/network.d/examples里的配置文件/etc/network.d/，改成自己的，可以多方案。<br> c.修改/etc/rc.conf,NETWORKS=(mynetwork1 mynetwork2 …)或NETWORKS=(menu)，第二个配置会在系统启动的时候出现一个选择对话框让你选择用什么网络链接，需要另安装dialog这个package；然后修改DAEMONS=(… net-profiles …)。<br> d.安装dhclient，并在/etc/network.d/的文件里面修改配置，在需要dhcp的配置里加上DHCLIENT=yes就行了。<br>其中发现问题： 我的ibm thinkpad x60无法在家里自动获取网线dhcp，怎么弄都不行但手工指定IP可以连，估计是dhcpcd问题，手工改为dhclient解决。最新版已经解决这个问题。</p>
-<p>5.安装显卡驱动xf86-video-intel,安装mesa支持3d，其它调整以后再说<br>6.安装 bash-completion,echo source /etc/bash_completion &gt;&gt;/etc/profile<br>7.安装sudo 并 visudo<br>8.新建用户<br>9.安装xorg<br>pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils<br>pacman -S mesa  支持3D<br>pacman -S xorg-twm xorg-xclock xterm 测试环境 我试过先装fluxbox,其实可以不装这个<br>10.安装触摸板<br>pacman -S xf86-input-synaptics<br>11.安装fluxbox并设置<br>12.安装dbus,新版fcitx需要dbus支持<br>13.安装设置fcitx<br>14.安装chromium<br>15.安装AUR<br>最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf:<br>[archlinuxfr]<br>Server = <a target="_blank" rel="noopener" href="http://repo.archlinux.fr/x86_64">http://repo.archlinux.fr/x86_64</a><br>同步并安装：acman -Syu yaourt</p>
-<p>16.配置pacman使用aria2进行多线程下载</p>
-<p>pacman -S aria2<br>在/etc/pacman.conf中加入以下代码：</p>
-<p>XferCommand = /usr/bin/aria2c -s 5 %u<br>其中-s 5 表示使用5个线程，%u表示url代码</p>
-<p>配置：</p>
-<ol>
-<li>新版archlinux已经有flashplugin包，直接pacman安装</li>
-</ol>
-<ol start="2">
-<li>goagent配置</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages.php?ID=48201">https://aur.archlinux.org/packages.php?ID=48201</a></p>
-<p>上面下载tarball文件，解压，进入目录</p>
-<p>先安装git</p>
-<p>pacman -S git<br>然后</p>
-<p>su<br>makepkg -s –asroot<br>pacman -U goagent-git-xxxx-i686.pkg.tar.xz<br>至于申请过程，跟windows上面一样，由于我在windows上一直有使用，所以只需要配置gogent就行了。</p>
-<p>配置文件在/etc/goagent,修改[gae]下的appid和password<br>然后编辑/etc/rc.conf   DAEMONS= ( … goagent …) 以后就可以开机自动启动了</p>
-<p>当然也可以 </p>
-<p>sudo /etc/rc.d/goagent start<br>进行启动</p>
-<p>chromium上面我的是自动同步 SwitchySharp过来的，没有的要自己安装，然后导入下面的配置：</p>
-<p><a target="_blank" rel="noopener" href="http://goagent.googlecode.com/files/SwitchyOptions.bak">http://goagent.googlecode.com/files/SwitchyOptions.bak</a></p>
-<p>3.fluxbox 背景轮换</p>
-<p>pacman -S feh</p>
-<p>如果没有安装，执行fbsetbg会提示你没有适当的图片浏览程序</p>
-<p>打开 ~/.fluxbox/init文件</p>
-<p>在session.screen0等条目下插入</p>
-<p>session.screen.rootCommand: fbsetbg -c -f -r /home/photos/favorites</p>
-<p>然后把自己喜欢的背景图片扔到 /home/photos/favorites目录下就行了</p>
-<p>4.fluxbox半透明</p>
-<h1 id="pacman-S-xcompmgr"><a href="#pacman-S-xcompmgr" class="headerlink" title="pacman -S xcompmgr"></a>pacman -S xcompmgr</h1><p>然后再编辑~/.xinitrc加入 xcompmgr &amp; 就行了。不用再管什么rxvt不能透明等问题，上面的装上就行了，现代的电脑速度不可能连半透明都搞不定，除非是奔三时代的电脑。</p>
-<ol start="5">
-<li>conky安装</li>
-</ol>
-<p>如上，装上后在~/.xinitrc加入 conky &amp;。记住要在 startfluxbox前，配置自己搞了</p>
-<ol start="6">
-<li>英文locale下gvim中文显示问题</li>
-</ol>
-<p>修改 ~/.vimrc 加入</p>
-<p>set fileencodings=utf-8,gbk,ucs-bom,cp936</p>
-<ol start="7">
-<li>fluxbox主题中文化</li>
-</ol>
-<p>我习惯先装这个软件 mlocate 这个软件，它有个好处，就是就算你不会grep它也能让你很快找到文件</p>
-<p>命令为：</p>
-<p>pacman -S mlocate<br>updatedb<br>locate theme.cfg</p>
-<p>就像windows的索引服务，updatedb先建立一个所有文件目录的索引数据，然后locate直接在这个数据找文件</p>
-<p>然后在你的主题目录下，一般在/usr/share/fluxbox的多级子目录下找到theme.cfg这个文件</p>
-<blockquote>
-<p>grep font theme.cfg *font: WenQuanYi BitMap Song-9:Bold menu.frame.font: sans-9:bold menu.title.font: sans-10:bold toolbar.clock.font: sans-9:bold toolbar.workspace.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.focused.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.unfocused.font: WenQuanYi BitMap Song-9 window.font: sans-8</p>
-</blockquote>
-<p>修改里面的适当font为适当中文字体</p>
+      section.post-body(itemprop='articleBody')
+        .post-content.markdown-body(style=`--smc-primary:${theme.colors.primary};`)!=post.content
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/" data-id="ckf5myrbv000nz8ng76nnd8lp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/archlinux/" rel="tag">archlinux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+        if theme.reward.enable && page.reward !== false
+          include _partial/post/reward.pug
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          archlinux x86_64 fluxbox chroumium rox setting with dropbox
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">archlinux 启动错误: Error 15: File not found</div>
-    </a>
-  
-</nav>
+        if theme.creative_commons.license && theme.creative_commons.post
+          include _partial/post/post-copyright.pug
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/archlinux/" rel="tag">archlinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slackware/" rel="tag">slackware</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%AE%E8%A1%8C/" rel="tag">修行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/archlinux/" style="font-size: 13.33px;">archlinux</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/slackware/" style="font-size: 13.33px;">slackware</a> <a href="/tags/%E4%BF%AE%E8%A1%8C/" style="font-size: 10px;">修行</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 20px;">知识点</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">八月 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">五月 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">十月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">五月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">三月 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">十二月 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">十一月 2007</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/09/17/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/">论韧带松紧不平衡</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/">红牛v5 android cm12.1 分辨率修改</a>
-          </li>
-        
-          <li>
-            <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/">msysGit 和 Git for Windows 的关系</a>
-          </li>
-        
-          <li>
-            <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/">Slackware 14.1 安装日记（提高效率帖）</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 McHTD<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+    if post.prev || post.next
+      include _partial/post/post-nav.pug
