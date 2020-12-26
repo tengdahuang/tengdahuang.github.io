@@ -1,1022 +1,1251 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
 
-    
 
-    
-    <title>后知后觉的博客</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","version":"8.1.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}};
+  </script>
+<meta property="og:type" content="website">
 <meta property="og:title" content="后知后觉的博客">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="后知后觉的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="McHTD">
 <meta name="twitter:card" content="summary">
-    
-
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-    
-<link rel="stylesheet" href="/css/style.css">
+<link rel="canonical" href="http://example.com/">
 
 
-    
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
-    
-
-
-<meta name="generator" content="Hexo 5.1.1"></head>
-
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">主页</a>
-                                </li>
-                            
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/linux/">linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></li></ul>
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
 </script>
+<title>后知后觉的博客</title>
+  
 
-<script src="/js/insight.js"></script>
 
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">后知后觉的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">McHTD</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tengdahuang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tengdahuang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tengda.huang@gmail.com" title="E-Mail → mailto:tengda.huang@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
     
-    <em class="page-title-link" data-url="home">主页</em>
-    </h1>
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/" class="post-title-link" itemprop="url">论韧带松紧不平衡</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-09-20 11:02:54" itemprop="dateCreated datePublished" datetime="2015-09-20T11:02:54+08:00">2015-09-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:36:15" itemprop="dateModified" datetime="2019-12-12T16:36:15+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BF%AE%E8%A1%8C/" itemprop="url" rel="index"><span itemprop="name">修行</span></a>
+        </span>
+    </span>
+
+  
 </div>
 
-                        <div class="main-body-content">
-                            
-
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2015" class="archive-year"><i class="icon fa fa-calendar-o"></i>2015</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/20150912.jpg)" alt="论韧带松紧不平衡" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a>
-            </div>
-            <div class="date"><time datetime="2015-09-20T03:02:54.000Z" itemprop="datePublished">2015-09-20</time></div>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/">论韧带松紧不平衡</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            ABC三块骨，A和b间韧带紧B和C间韧带松，那么要练松A和B之间，就要先学会锁定B和C。除了韧带，控制人体活动的肌肉分伸肌和缩肌。也就是说要锻炼AB的伸肌力量外，还要锻炼BC的缩肌。所以同一个外形，内部肌肉运用不完全一样。体术修行最终都一样，就是越来越精细的控制力，减缓因失去控制力而粘连钙化。无论内家拳，芭蕾，还是瑜伽…
-
-
-        </p>
-    </div>
-</article>
-    
+      </header>
 
     
     
     
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/">0</span>
-    
-</span>
+    <div class="post-body" itemprop="articleBody">
+          <p>ABC三块骨，A和b间韧带紧B和C间韧带松，那么要练松A和B之间，就要先学会锁定B和C。除了韧带，控制人体活动的肌肉分伸肌和缩肌。也就是说要锻炼AB的伸肌力量外，还要锻炼BC的缩肌。所以同一个外形，内部肌肉运用不完全一样。体术修行最终都一样，就是越来越精细的控制力，减缓因失去控制力而粘连钙化。无论内家拳，芭蕾，还是瑜伽…</p>
+<p><img src="/images/20150912.jpg"></p>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a>
-            </div>
-            <div class="date"><time datetime="2015-07-17T09:49:45.000Z" itemprop="datePublished">2015-07-17</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/">红牛v5 android cm12.1 分辨率修改</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            本想玩GTASA，听到有人说我的手机（红牛v5豪华版）显卡实际只能支持540P的游戏，所以想学学改下手机分辨率。学了，然并卵。因为又不想玩了，放着PC大游戏不玩简直蛋疼…比如正版的150多个MOD的minecraft。
-正题：
-cm12.1可以修改dpi：240 540x960320 720x1280 默认值
-听说没有这个选项的可能需要修改 system里面的build.prop，以编辑方式打开，
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a>
-            </div>
-            <div class="date"><time datetime="2015-01-01T01:39:00.000Z" itemprop="datePublished">2015-01-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/">msysGit 和 Git for Windows 的关系</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            The website git-scm.com is the official website for Git, the version control software. Originally written for Linux, the original software is only available as a source that doesn’t compile easily on 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2013" class="archive-year"><i class="icon fa fa-calendar-o"></i>2013</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/linux/">linux</a>
-            </div>
-            <div class="date"><time datetime="2013-12-06T03:18:58.000Z" itemprop="datePublished">2013-12-06</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/">Slackware 14.1 安装日记（提高效率帖）</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Slackware社区近年终于给slackware文档机制做了一个不错的贡献，那就是docs.slackware.com，现在有了类似arch wiki的东西了，所以安装照理说应该没啥大问题了。
-记录几点特殊的：
-
-现在保持英文界面，看中文网页已经完全不需要配置就OK了；至于输入法，推荐上slackbuild自己转个fcitx来装，并slackpkg search并卸载掉scim，因为fcitx会
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a>
-            </div>
-            <div class="date"><time datetime="2013-04-07T04:36:48.000Z" itemprop="datePublished">2013-04-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/">windows下编辑的vimrc文件在unix下乱码</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            尝试用git管理vim的配置文件并令其在windows和unix上面通用，结果碰到上面的问题，导致unix下面一打开vim就报配置文件错误。
-一个方法是在console用这个命令
-1sed -i &quot;s&#x2F;\r&#x2F;&#x2F;&quot; ~&#x2F;.vimrc 
-
-另一个办法是在.vimrc中加入
-1:set ff&#x3D;unix
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2012" class="archive-year"><i class="icon fa fa-calendar-o"></i>2012</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/linux/">linux</a>
-            </div>
-            <div class="date"><time datetime="2012-05-07T09:25:11.000Z" itemprop="datePublished">2012-05-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/">archlinux x86_64 fluxbox chroumium rox setting with dropbox</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            dropbox 版本挺多的，官网不支持arch，源码编译要求太多，比如专门的文件管理器，AUR那个又下不来，气死我也。
-最后找到它论坛上已编译好的，网址：http://forums.dropbox.com/topic.php?id=59297&amp;replies=193
-直接解压后那个.dropbox-dist(记得前面有个点）目录就能用了，但非常不方便，dropbox默认不支持rox，而且x
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/linux/">linux</a>
-            </div>
-            <div class="date"><time datetime="2012-05-05T08:56:48.000Z" itemprop="datePublished">2012-05-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/">archlinux 2011.8.19 版安装和配置点滴</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            安装
-1.使用core安装
-2.安装设置中设置好IP、locale等，mirror使用sohu.com
-3.安装完 pacman -Syu。发现不成功，查看官网news： a.pacman -S filesystem –force，因为filesystem-2011.12跟/etc/mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2011" class="archive-year"><i class="icon fa fa-calendar-o"></i>2011</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/linux/">linux</a>
-            </div>
-            <div class="date"><time datetime="2011-08-19T00:33:17.000Z" itemprop="datePublished">2011-08-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/">archlinux 启动错误: Error 15: File not found</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            arch linux，使用2010.5月iso的netinstall安装，发现内核 3.0后grub启动不正常，开机启动显示：
-12345678Booting &#39;Arch Linux&#39;root    (hd0,0)  Filesystem type is ext2fs, partition type 0x83kernel &#x2F;vmlinuz26 root&#x3D;&#x2
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2009" class="archive-year"><i class="icon fa fa-calendar-o"></i>2009</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2009/05/04/2009-05-04-SQL-Server-files-mdf-require-SQL-Server-Express-2005-to-function-properly/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2009/05/04/2009-05-04-SQL-Server-files-mdf-require-SQL-Server-Express-2005-to-function-properly/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a>
-            </div>
-            <div class="date"><time datetime="2009-05-04T03:35:00.000Z" itemprop="datePublished">2009-05-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2009/05/04/2009-05-04-SQL-Server-files-mdf-require-SQL-Server-Express-2005-to-function-properly/">SQL Server files (*.mdf) require SQL Server Express 2005 to function properly</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Installed tools:(VS 2008sp1, sql 2005 express, sql 2005 server, Asp.net MVC)
-Today when I was going to Add a new mdf database file, I got the following error:
-“Connections to SQL Server files (*.mdf) 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2008" class="archive-year"><i class="icon fa fa-calendar-o"></i>2008</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2008/10/28/2008-10-28-%E5%A0%86%E5%A0%86%E5%A0%86%EF%BC%8C%E6%A0%88%E6%A0%88%E6%A0%88-net/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2008/10/28/2008-10-28-%E5%A0%86%E5%A0%86%E5%A0%86%EF%BC%8C%E6%A0%88%E6%A0%88%E6%A0%88-net/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a>
-            </div>
-            <div class="date"><time datetime="2008-10-28T07:24:00.000Z" itemprop="datePublished">2008-10-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2008/10/28/2008-10-28-%E5%A0%86%E5%A0%86%E5%A0%86%EF%BC%8C%E6%A0%88%E6%A0%88%E6%A0%88-net/">堆堆堆，栈栈栈(.net)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            每次忘了都要去翻查书，麻烦死了。
-Stack（堆栈，也就是栈），存的就是单纯的数值类型和类的引用名称
-.net有个托管堆managed heap也叫heap，存的是类实例等
-为啥叫managed heap呢？因为还有个叫垃圾收集器的东西，所以此heap不同于彼heap。为啥这样说？
-因为，假设有abcde5份连续的内存存在managed heap中，然后 b 和 d 都被释放了，传统heap就保持
-        </p>
-    </div>
-</article>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 1 页，共 2 页</span>
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-    </nav>
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>关注我 :</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="gitee" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-gitee"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/tengdahuang" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/20150912.jpg)" alt="论韧带松紧不平衡" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a></p>
-                            <p class="item-title"><a href="/2015/09/20/2015-09-20-%E8%AE%BA%E9%9F%A7%E5%B8%A6%E6%9D%BE%E7%B4%A7%E4%B8%8D%E5%B9%B3%E8%A1%A1/" class="title">论韧带松紧不平衡</a></p>
-                            <p class="item-date"><time datetime="2015-09-20T03:02:54.000Z" itemprop="datePublished">2015-09-20</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></p>
-                            <p class="item-title"><a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/" class="title">红牛v5 android cm12.1 分辨率修改</a></p>
-                            <p class="item-date"><time datetime="2015-07-17T09:49:45.000Z" itemprop="datePublished">2015-07-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></p>
-                            <p class="item-title"><a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/" class="title">msysGit 和 Git for Windows 的关系</a></p>
-                            <p class="item-date"><time datetime="2015-01-01T01:39:00.000Z" itemprop="datePublished">2015-01-01</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/linux/">linux</a></p>
-                            <p class="item-title"><a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" class="title">Slackware 14.1 安装日记（提高效率帖）</a></p>
-                            <p class="item-date"><time datetime="2013-12-06T03:18:58.000Z" itemprop="datePublished">2013-12-06</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a></p>
-                            <p class="item-title"><a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/" class="title">windows下编辑的vimrc文件在unix下乱码</a></p>
-                            <p class="item-date"><time datetime="2013-04-07T04:36:48.000Z" itemprop="datePublished">2013-04-07</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+      
     </div>
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BF%AE%E8%A1%8C/">修行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E7%89%A9/">杂物</a><span class="category-list-count">8</span></li></ul>
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/07/17/2015-07-17-%E7%BA%A2%E7%89%9Bv5-android-cm12-1-%E5%88%86%E8%BE%A8%E7%8E%87%E4%BF%AE%E6%94%B9/" class="post-title-link" itemprop="url">红牛v5 android cm12.1 分辨率修改</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-07-17 17:49:45" itemprop="dateCreated datePublished" datetime="2015-07-17T17:49:45+08:00">2015-07-17</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-12-27 02:11:20" itemprop="dateModified" datetime="2020-12-27T02:11:20+08:00">2020-12-27</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">杂物</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>本想玩 GTASA，听到有人说我的手机（红牛 v5 豪华版）显卡实际只能支持 540P 的游戏，所以想学学改下手机分辨率。学了，然并卵。因为又不想玩了，放着 PC 大游戏不玩简直蛋疼…比如正版的 150 多个 MOD 的 minecraft。</p>
+<p>正题：</p>
+<h4 id="cm12-1-可以修改-dpi："><a href="#cm12-1-可以修改-dpi：" class="headerlink" title="cm12.1 可以修改 dpi："></a>cm12.1 可以修改 dpi：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">240 540x960</span><br><span class="line">320 720x1280 默认值</span><br></pre></td></tr></table></figure>
+
+<p>听说没有这个选项的可能需要修改  system 里面的 build.prop，以编辑方式打开，找到 ro.sf.lcd_density=320，改 240</p>
+<h4 id="安装终端模拟器"><a href="#安装终端模拟器" class="headerlink" title="安装终端模拟器"></a>安装终端模拟器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">am display-size 540x960  (然而对于cm12.1无用）</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wm size 540x960</span><br></pre></td></tr></table></figure>
+
+<p>要改回来只需</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wm size reset</span><br></pre></td></tr></table></figure>
+
+      
     </div>
 
+    
+    
+    
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">八月 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/05/">五月 2009</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">十月 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">五月 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">三月 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">十二月 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">十一月 2007</a><span class="archive-list-count">2</span></li></ul>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/01/2015-01-01-msysGit-%E5%92%8C-Git-for-Windows-%E7%9A%84%E5%85%B3%E7%B3%BB/" class="post-title-link" itemprop="url">msysGit 和 Git for Windows 的关系</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-01-01 09:39:00" itemprop="dateCreated datePublished" datetime="2015-01-01T09:39:00+08:00">2015-01-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:47:37" itemprop="dateModified" datetime="2019-12-12T16:47:37+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">杂物</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>The website <a target="_blank" rel="noopener" href="http://git-scm.com/">git-scm.com</a> is the official website for Git, the version control software. Originally written for Linux, the original software is only available as a source that doesn’t compile easily on Windows.</p>
+<p>msysGit it a project that uses MSYS (which is part of MinGW) to compile Git natively on Windows. They release the “Git for Windows” binaries which is the official release for Windows. Those are what you get when you download Git for Windows on git-scm.com.</p>
+<p>The msysGit project also releases “msysgit” binaries, which is essentially the full development environment required to build “Git for Windows”. The project was originally hosted on Google Code but later moved its project to GitHub and created a new project website there.</p>
+<p>If you are interested in using Git on Windows, all you need though is “Git for Windows” which you can either download from git-scm.com or from the Google Code download repository.</p>
+<p>Note that the files are usually called “preview” because the msysGit project does not offer full support for it. From personal experience with it, the project is very mature and definitely stable, so it’s perfectly fine to use it.</p>
+<p>Finally, “Git Bash” is the version of Bash that comes bundled with “Git for Windows” or more precisely with the underlying MSYS. It is required because a lot of Git is actually written as shell scripts (so Bash works as an interpreter for it) and simply so users have a fully compatible console to work with on Windows. Git Bash works even if you didn’t add the Git executables to your PATH during setup, although my usual recommendation is to add the Git executable (just the Git executable) to the PATH, so you can work with it from other shells (cmd.exe or PowerShell) and other programs can access it too.</p>
+
+      
     </div>
 
+    
+    
+    
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">标签</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/archlinux/" rel="tag">archlinux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-slackware/" rel="tag">linux,slackware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slackware/" rel="tag">slackware</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%AE%E8%A1%8C/" rel="tag">修行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a><span class="tag-list-count">8</span></li></ul>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/12/06/2013-12-06-Slackware-14-1-%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0%EF%BC%88%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E5%B8%96%EF%BC%89/" class="post-title-link" itemprop="url">Slackware 14.1 安装日记（提高效率帖）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-12-06 11:18:58" itemprop="dateCreated datePublished" datetime="2013-12-06T11:18:58+08:00">2013-12-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:37:22" itemprop="dateModified" datetime="2019-12-12T16:37:22+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Slackware社区近年终于给slackware文档机制做了一个不错的贡献，那就是docs.slackware.com，现在有了类似arch wiki的东西了，所以安装照理说应该没啥大问题了。</p>
+<p>记录几点特殊的：</p>
+<ol>
+<li><p>现在保持英文界面，看中文网页已经完全不需要配置就OK了；至于输入法，推荐上slackbuild自己转个fcitx来装，并slackpkg search并卸载掉scim，因为fcitx会在/etc/profile.d里面生成相应的modifier的sh文件供自动载入，以前需要手工的现在也不需要了，我们唯一需要改的就是local上改成UTF-8格式的。</p>
+</li>
+<li><p>如果想要google-chrome，也可以在slackbuild照要求拉，没必要去折腾chromium，windows上chrome还不是照用。原因如下：chromium需要申请一个api Key去编译，才能同步google账号，进行收藏夹同步等，没有了这个chrome基本上等同于废物，浏览器功能会大打折扣，而chromium对这个key管控其实挺严的，需要加入开发组去申请，普通使用真的没必要。 Chrome推荐几个插件，Adblock, goagent+Proxy SwitchySharp,以及最重要的Vimium，特别是Vimium，真正牛啊，H I J K移动页面，D/U上下翻，还有一个特别好的功能是用键盘打开网址：F和shift + F，然后页面的链接上出现各种字母和组合，然后输该字母回车就打开网页，Shift+hjkl在网页间移动，x关页面，T新增标签页，至少效率上感觉比firefox高，除了胖客户javascript网站，其它所有网站包括淘宝基本都能完全用键盘操作，有些难关难开的页可以用chrome内置快捷键辅助。</p>
+</li>
+<li><p>Tilling windows manager 在linux社区有一个新宠： i3 wm，google Tech视频居然有专门的视频报道，估计是内部人开发的，也算一奇葩；也是纯快捷方式操作，mod+D，输入goo，回车自动联想打开google-chrome，大部分x程序都可以这样打开，如果觉得还不够快还能自己绑定进入i3时自启和快捷键。mod+回车自动打开terminal（Mod键设为windows键)，窗口间移动也是类似vim，mod+j,k,l,; 不用h做左移是因为mod+H就代表打开新的东西接下来会在水平右边新增，如果是mod+v，就是下面新增；然后Mod+1-9就是切换工作区，shift+mod+q就是kill掉当前窗口，shift+mod+E就是退出i3。</p>
+</li>
+<li><p>无线网络推荐使用wicd，在光盘的extra上有，它区别于networkmanager一个最大的好处是启动服务后，有一个console上的配置界面，wicd-curs…（没记住全名，自己tab），也就是说，设置好后，无线网络无论在X还是console都能用，再也不用依赖蛋疼的X上的manager去配置和连接网络。</p>
+</li>
+</ol>
+<p>只想到这么多，以后有再补充。</p>
+
+      
     </div>
 
+    
+    
+    
 
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/archlinux/" style="font-size: 15px;">archlinux</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/linux-slackware/" style="font-size: 10px;">linux,slackware</a> <a href="/tags/slackware/" style="font-size: 12.5px;">slackware</a> <a href="/tags/%E4%BF%AE%E8%A1%8C/" style="font-size: 10px;">修行</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 20px;">知识点</a>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/04/07/2013-04-07-windows%E4%B8%8B%E7%BC%96%E8%BE%91%E7%9A%84vimrc%E6%96%87%E4%BB%B6%E5%9C%A8unix%E4%B8%8B%E4%B9%B1%E7%A0%81/" class="post-title-link" itemprop="url">windows下编辑的vimrc文件在unix下乱码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2013-04-07 12:36:48" itemprop="dateCreated datePublished" datetime="2013-04-07T12:36:48+08:00">2013-04-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:47:43" itemprop="dateModified" datetime="2019-12-12T16:47:43+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">杂物</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>尝试用git管理vim的配置文件并令其在windows和unix上面通用，结果碰到上面的问题，导致unix下面一打开vim就报配置文件错误。</p>
+<p>一个方法是在console用这个命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s&#x2F;\r&#x2F;&#x2F;&quot; ~&#x2F;.vimrc </span><br></pre></td></tr></table></figure>
+
+<p>另一个办法是在.vimrc中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:set ff&#x3D;unix</span><br></pre></td></tr></table></figure>
+
+      
     </div>
 
+    
+    
+    
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/05/07/2012-05-07-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/" class="post-title-link" itemprop="url">archlinux x86_64 fluxbox chroumium rox setting with dropbox</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2012-05-07 17:25:11" itemprop="dateCreated datePublished" datetime="2012-05-07T17:25:11+08:00">2012-05-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-11 11:13:11" itemprop="dateModified" datetime="2019-12-11T11:13:11+08:00">2019-12-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>dropbox 版本挺多的，官网不支持arch，源码编译要求太多，比如专门的文件管理器，AUR那个又下不来，气死我也。</p>
+<p>最后找到它论坛上已编译好的，网址：<a target="_blank" rel="noopener" href="http://forums.dropbox.com/topic.php?id=59297&amp;replies=193">http://forums.dropbox.com/topic.php?id=59297&amp;replies=193</a></p>
+<p>直接解压后那个.dropbox-dist(记得前面有个点）目录就能用了，但非常不方便，dropbox默认不支持rox，而且xdg-open还打不开最新的chromium，解决方法如下：</p>
+<ol>
+<li><p> sudo cp -r .dropbox-dist /opt</p>
+</li>
+<li><p>locate xdg-open寻找xdg-open文件位置(locate命令见上一篇博客，在mlocate包里，先updatedb再locate，方便必装）</p>
+</li>
+</ol>
+<p>    sudo vim /usr/bin/xdg-open</p>
+<p>    搜寻firefox字段，也就是  BROWSER = firefox …..</p>
+<p>    在=号后面，firefox前面加上 chromium:   保存退出</p>
+<p>    这样，就算没有Nautilus这个工具，dropbox默认会用chromium打开网址（我只装了chromium)</p>
+<ol start="3">
+<li>但是这样用还是有点不爽，最好还是能跟rox文件管理器关联，所以一不做二不休</li>
+</ol>
+<p>$ sudo touch /usr/bin/nautilus &amp;&amp; sudo chmod +x /usr/bin/nautilus &amp;&amp; sudo vim /usr/bin/nautilus</p>
+<p>建一个僵尸文件并改为可执行，在里面填入以下内容</p>
+<p>#!/bin/bash<br>   exec rox $2<br>   exit 0</p>
+<p>再保存退出</p>
+<ol start="4">
+<li><p>给fluxbox的menu加上</p>
+<p>[exec] (Dropbox) {~/opt/.dropbox-dist/dropbox}</p>
+</li>
+</ol>
+<p> 或是想进入fluxbox时启动也可以，修改.xinitrc 加入dropboxd</p>
+<p>世界清净了。</p>
+
+      
     </div>
 
+    
+    
+    
 
-            
-        
-    </div>
-</aside>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
-                </div>
-            </div>
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/05/05/2012-05-05-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/" class="post-title-link" itemprop="url">archlinux 2011.8.19 版安装和配置点滴</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2012-05-05 16:56:48" itemprop="dateCreated datePublished" datetime="2012-05-05T16:56:48+08:00">2012-05-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-11 11:12:12" itemprop="dateModified" datetime="2019-12-11T11:12:12+08:00">2019-12-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2020 McHTD</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
-              
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>安装</p>
+<p>1.使用core安装</p>
+<p>2.安装设置中设置好IP、locale等，mirror使用sohu.com</p>
+<p>3.安装完 pacman -Syu。发现不成功，查看官网news：<br> a.pacman -S filesystem –force，因为filesystem-2011.12跟/etc/mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连接至/proc/self/mounts,这样initscripts不再需要访问rootfs。<br> b.手工删除 /etc/profile.d/locale.sh。新的filesystem可以使系统在locale更改后不用重启，只需要注销。</p>
+<p>4.配置机器启动中弹出选单选择自动连接什么网络（网线或无线网）。<br> a.安装netcfg, wireless_tools, wpa_supplicant,wpa_actiond<br> b.复制/etc/network.d/examples里的配置文件/etc/network.d/，改成自己的，可以多方案。<br> c.修改/etc/rc.conf,NETWORKS=(mynetwork1 mynetwork2 …)或NETWORKS=(menu)，第二个配置会在系统启动的时候出现一个选择对话框让你选择用什么网络链接，需要另安装dialog这个package；然后修改DAEMONS=(… net-profiles …)。<br> d.安装dhclient，并在/etc/network.d/的文件里面修改配置，在需要dhcp的配置里加上DHCLIENT=yes就行了。<br>其中发现问题： 我的ibm thinkpad x60无法在家里自动获取网线dhcp，怎么弄都不行但手工指定IP可以连，估计是dhcpcd问题，手工改为dhclient解决。最新版已经解决这个问题。</p>
+<p>5.安装显卡驱动xf86-video-intel,安装mesa支持3d，其它调整以后再说<br>6.安装 bash-completion,echo source /etc/bash_completion &gt;&gt;/etc/profile<br>7.安装sudo 并 visudo<br>8.新建用户<br>9.安装xorg<br>pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils<br>pacman -S mesa  支持3D<br>pacman -S xorg-twm xorg-xclock xterm 测试环境 我试过先装fluxbox,其实可以不装这个<br>10.安装触摸板<br>pacman -S xf86-input-synaptics<br>11.安装fluxbox并设置<br>12.安装dbus,新版fcitx需要dbus支持<br>13.安装设置fcitx<br>14.安装chromium<br>15.安装AUR<br>最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf:<br>[archlinuxfr]<br>Server = <a target="_blank" rel="noopener" href="http://repo.archlinux.fr/x86_64">http://repo.archlinux.fr/x86_64</a><br>同步并安装：acman -Syu yaourt</p>
+<p>16.配置pacman使用aria2进行多线程下载</p>
+<p>pacman -S aria2<br>在/etc/pacman.conf中加入以下代码：</p>
+<p>XferCommand = /usr/bin/aria2c -s 5 %u<br>其中-s 5 表示使用5个线程，%u表示url代码</p>
+<p>配置：</p>
+<ol>
+<li>新版archlinux已经有flashplugin包，直接pacman安装</li>
+</ol>
+<ol start="2">
+<li>goagent配置</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages.php?ID=48201">https://aur.archlinux.org/packages.php?ID=48201</a></p>
+<p>上面下载tarball文件，解压，进入目录</p>
+<p>先安装git</p>
+<p>pacman -S git<br>然后</p>
+<p>su<br>makepkg -s –asroot<br>pacman -U goagent-git-xxxx-i686.pkg.tar.xz<br>至于申请过程，跟windows上面一样，由于我在windows上一直有使用，所以只需要配置gogent就行了。</p>
+<p>配置文件在/etc/goagent,修改[gae]下的appid和password<br>然后编辑/etc/rc.conf   DAEMONS= ( … goagent …) 以后就可以开机自动启动了</p>
+<p>当然也可以 </p>
+<p>sudo /etc/rc.d/goagent start<br>进行启动</p>
+<p>chromium上面我的是自动同步 SwitchySharp过来的，没有的要自己安装，然后导入下面的配置：</p>
+<p><a target="_blank" rel="noopener" href="http://goagent.googlecode.com/files/SwitchyOptions.bak">http://goagent.googlecode.com/files/SwitchyOptions.bak</a></p>
+<p>3.fluxbox 背景轮换</p>
+<p>pacman -S feh</p>
+<p>如果没有安装，执行fbsetbg会提示你没有适当的图片浏览程序</p>
+<p>打开 ~/.fluxbox/init文件</p>
+<p>在session.screen0等条目下插入</p>
+<p>session.screen.rootCommand: fbsetbg -c -f -r /home/photos/favorites</p>
+<p>然后把自己喜欢的背景图片扔到 /home/photos/favorites目录下就行了</p>
+<p>4.fluxbox半透明</p>
+<h1 id="pacman-S-xcompmgr"><a href="#pacman-S-xcompmgr" class="headerlink" title="pacman -S xcompmgr"></a>pacman -S xcompmgr</h1><p>然后再编辑~/.xinitrc加入 xcompmgr &amp; 就行了。不用再管什么rxvt不能透明等问题，上面的装上就行了，现代的电脑速度不可能连半透明都搞不定，除非是奔三时代的电脑。</p>
+<ol start="5">
+<li>conky安装</li>
+</ol>
+<p>如上，装上后在~/.xinitrc加入 conky &amp;。记住要在 startfluxbox前，配置自己搞了</p>
+<ol start="6">
+<li>英文locale下gvim中文显示问题</li>
+</ol>
+<p>修改 ~/.vimrc 加入</p>
+<p>set fileencodings=utf-8,gbk,ucs-bom,cp936</p>
+<ol start="7">
+<li>fluxbox主题中文化</li>
+</ol>
+<p>我习惯先装这个软件 mlocate 这个软件，它有个好处，就是就算你不会grep它也能让你很快找到文件</p>
+<p>命令为：</p>
+<p>pacman -S mlocate<br>updatedb<br>locate theme.cfg</p>
+<p>就像windows的索引服务，updatedb先建立一个所有文件目录的索引数据，然后locate直接在这个数据找文件</p>
+<p>然后在你的主题目录下，一般在/usr/share/fluxbox的多级子目录下找到theme.cfg这个文件</p>
+<blockquote>
+<p>grep font theme.cfg *font: WenQuanYi BitMap Song-9:Bold menu.frame.font: sans-9:bold menu.title.font: sans-10:bold toolbar.clock.font: sans-9:bold toolbar.workspace.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.focused.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.unfocused.font: WenQuanYi BitMap Song-9 window.font: sans-8</p>
+</blockquote>
+<p>修改里面的适当font为适当中文字体</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
-            </div>
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2011/08/19/2011-08-19-archlinux-%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF-Error-15-File-not-found/" class="post-title-link" itemprop="url">archlinux 启动错误: Error 15: File not found</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2011-08-19 08:33:17" itemprop="dateCreated datePublished" datetime="2011-08-19T08:33:17+08:00">2011-08-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-11 11:19:32" itemprop="dateModified" datetime="2019-12-11T11:19:32+08:00">2019-12-11</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>arch linux，使用2010.5月iso的netinstall安装，发现内核 3.0后grub启动不正常，开机启动显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Booting &#39;Arch Linux&#39;</span><br><span class="line">root    (hd0,0)</span><br><span class="line">  Filesystem type is ext2fs, partition type 0x83</span><br><span class="line">kernel &#x2F;vmlinuz26 root&#x3D;&#x2F;dev&#x2F;sda6 ro vga&#x3D;792</span><br><span class="line"> </span><br><span class="line">Error 15: File not found</span><br><span class="line"> </span><br><span class="line">Press any key to continue...</span><br></pre></td></tr></table></figure>
+<p>在grub菜单中按e修改后进入系统修改/boot/grub/menu.lst文件：vmlinuz26 修改为 vmlinuz-linux, kernel26.img 修改为 initramfs-linux.img。 kernel26-fallback.img 修改为 initramfs-linux-fallback.img</p>
+
+      
     </div>
-</footer>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2009/05/04/2009-05-04-SQL-Server-files-mdf-require-SQL-Server-Express-2005-to-function-properly/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2009/05/04/2009-05-04-SQL-Server-files-mdf-require-SQL-Server-Express-2005-to-function-properly/" class="post-title-link" itemprop="url">SQL Server files (*.mdf) require SQL Server Express 2005 to function properly</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2009-05-04 11:35:00" itemprop="dateCreated datePublished" datetime="2009-05-04T11:35:00+08:00">2009-05-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:47:50" itemprop="dateModified" datetime="2019-12-12T16:47:50+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">杂物</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Installed tools:(VS 2008sp1, sql 2005 express, sql 2005 server, Asp.net MVC)</p>
+<p>Today when I was going to Add a new mdf database file, I got the following error:</p>
+<p>“Connections to SQL Server files (*.mdf) require SQL Server Express 2005 to function properly. Please verify the installation of the component …”</p>
+<p>After searching for google, the problem solved, here’s they are</p>
+<p>Navigate to “Tools” –&gt; “Option” –&gt; “Database Tools ” –&gt;“Data Connections -&gt;“SQL Server Instance Name (Blank for default): In the TextBox, I found it was “datasvr1” which is another computer’s name.</p>
+<p>Whatever I left it blank or changed it to “./SQLEXPRESS”, it didn’t work.</p>
+<p>Then I found another one says:</p>
+<p>“I then happened to notice in SQL Server Configuration Manager that the SQLEXPRESS SQL Server service showed “NT AUTHORITY/NetworkService” under “Log On As” while MSSQLSERVER (the SQL Standard Edition service) showed LocalSystem.  Right click on the SQLEXPRESS service, click Properties and then select Local System from the built-in account dropdown.  Please note that in your situation using this account may not be an option due to security and/or network connectivity.”</p>
+<p>Following the instruction he metioned, then I also found in the “SQL Native Client Configuration”, the alias name was also datasvr1, which must be Design1 in my situation.</p>
+<p>The problem still exist….</p>
+<p>Finally I changed the data instance name in the Tools -&gt; Options….. of visual studio 2008 to SQLEXPRESS, without the prefix of  “./”, All things went OK, haha.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2008/10/28/2008-10-28-%E5%A0%86%E5%A0%86%E5%A0%86%EF%BC%8C%E6%A0%88%E6%A0%88%E6%A0%88-net/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="McHTD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后知后觉的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2008/10/28/2008-10-28-%E5%A0%86%E5%A0%86%E5%A0%86%EF%BC%8C%E6%A0%88%E6%A0%88%E6%A0%88-net/" class="post-title-link" itemprop="url">堆堆堆，栈栈栈(.net)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2008-10-28 15:24:00" itemprop="dateCreated datePublished" datetime="2008-10-28T15:24:00+08:00">2008-10-28</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-12-12 16:47:59" itemprop="dateModified" datetime="2019-12-12T16:47:59+08:00">2019-12-12</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">杂物</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>每次忘了都要去翻查书，麻烦死了。</p>
+<p>Stack（堆栈，也就是栈），存的就是单纯的数值类型和类的引用名称</p>
+<p>.net有个托管堆managed heap也叫heap，存的是类实例等</p>
+<p>为啥叫managed heap呢？因为还有个叫垃圾收集器的东西，所以此heap不同于彼heap。为啥这样说？</p>
+<p>因为，假设有abcde5份连续的内存存在managed heap中，然后 b 和 d 都被释放了，传统heap就保持原样，下次分配内存的时候系统需要找到一个适合新东西放的空间。但是自从有了垃圾收集器之后，b和d一被释放，垃圾收集器就来做善后工作了，它吧c调到a后面，再把e调到c后面，所以ace又是连续的内存而b,d所释放的内存被放到了后面。</p>
+<p>本说法出自《C#高级编程第4版》，英文版叫 《Professional C# 2005》。推荐看英文版，或是时间充足的话对照着看。中文版有些直译式中文，理解起来还不如直接看英文好。</p>
+<p>补：自己对C,C++内存上问题的理解</p>
+<p>你 int 一个 a，就在栈中分配了一个名称为a的空间<br>int b，就接着a分配了b的空间<br>普通值类型的分配都是连续的，都放在栈里，所以，程序结束后，内存是先释放b的空间，再释放a的空间，b没销毁，a永远在，这就是栈stack（也叫堆栈），先进后出。<br>普通的堆，则在一列内存空间中选择能放下的放东西，它想进就进，用完就销毁。有人叫它先进先出，但是不准确。因为进去之后，不用它的时候就销毁，但是如果还在用，它就还在，跟别的内存块的产生于销毁没有直接关系。为啥说它性能不如栈？因为查找新空间需要消耗时间。<br> 为啥说指针危险，因为无论是栈或是堆里面放的东西，你指着指着就跳没了，刚才的地址上的数据还在，就会出现资源回收的问题。</p>
+<p>指针会出的资源溢出就是在于，空间没释放，内存会一直占用着，会出现几个问题：<br>1.栈满了，你再放的东西太大，肯定溢出。</p>
+<p>2.越界问题，取到了垃圾数据会使程序连锁反应般地胡乱计算。<br>2.内存无休止增加，系统崩溃。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Power By McHTD</span>
+</div>
 
     </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
 
 
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
 
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-
-    
-    
-    
+  
 
 
 
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
 
 
 </body>
