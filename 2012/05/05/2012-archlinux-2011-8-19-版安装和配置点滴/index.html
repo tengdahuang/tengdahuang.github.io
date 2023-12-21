@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 7.0.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>archlinux 2011.8.19 版安装和配置点滴 - Cogent小站</title>
+
+  
+    <meta name="description" content="安装 1.使用core安装 2.安装设置中设置好IP、locale等，mirror使用sohu.com 3.安装完 pacman -Syu。发现不成功，查看官网news： a.pacman -S filesystem –force，因为filesystem-2011.12跟&#x2F;etc&#x2F;mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成fi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="archlinux 2011.8.19 版安装和配置点滴">
+<meta property="og:url" content="https://www.stth.cc/2012/05/05/2012-archlinux-2011-8-19-%E7%89%88%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E7%82%B9%E6%BB%B4/index.html">
+<meta property="og:site_name" content="Cogent小站">
+<meta property="og:description" content="安装 1.使用core安装 2.安装设置中设置好IP、locale等，mirror使用sohu.com 3.安装完 pacman -Syu。发现不成功，查看官网news： a.pacman -S filesystem –force，因为filesystem-2011.12跟&#x2F;etc&#x2F;mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成fi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2012-05-05T08:56:48.000Z">
+<meta property="article:modified_time" content="2012-05-05T08:56:48.000Z">
+<meta property="article:author" content="TengdaHuang">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="archlinux">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="linux,archlinux">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/th.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Cogent小站</div><div class="sub normal cap">学海无涯</div><div class="sub hover cap" style="opacity:0"> 技术与修行</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">archlinux 2011.8.19 版安装和配置点滴</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/linux/">linux</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/linux/archlinux/">archlinux</a></div><div id="post-meta">
+    <span>发布于&nbsp;<time datetime="2012-05-05T08:56:48.000Z">2012-05-05</time></span>
+    
+    <span>更新于&nbsp;<time datetime="2012-05-05T08:56:48.000Z">2012-05-05</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>archlinux 2011.8.19 版安装和配置点滴</span></h1>
+<p>安装</p>
+<p>1.使用core安装</p>
+<p>2.安装设置中设置好IP、locale等，mirror使用sohu.com</p>
+<p>3.安装完 pacman -Syu。发现不成功，查看官网news：<br> a.pacman -S filesystem –force，因为filesystem-2011.12跟&#x2F;etc&#x2F;mtab冲突，手工删除不安全。原因是mtab是boot自动生成的，其它包并不使用它，所以改成filesystem软连接至&#x2F;proc&#x2F;self&#x2F;mounts,这样initscripts不再需要访问rootfs。<br> b.手工删除 &#x2F;etc&#x2F;profile.d&#x2F;locale.sh。新的filesystem可以使系统在locale更改后不用重启，只需要注销。</p>
+<p>4.配置机器启动中弹出选单选择自动连接什么网络（网线或无线网）。<br> a.安装netcfg, wireless_tools, wpa_supplicant,wpa_actiond<br> b.复制&#x2F;etc&#x2F;network.d&#x2F;examples里的配置文件&#x2F;etc&#x2F;network.d&#x2F;，改成自己的，可以多方案。<br> c.修改&#x2F;etc&#x2F;rc.conf,NETWORKS&#x3D;(mynetwork1 mynetwork2 …)或NETWORKS&#x3D;(menu)，第二个配置会在系统启动的时候出现一个选择对话框让你选择用什么网络链接，需要另安装dialog这个package；然后修改DAEMONS&#x3D;(… net-profiles …)。<br> d.安装dhclient，并在&#x2F;etc&#x2F;network.d&#x2F;的文件里面修改配置，在需要dhcp的配置里加上DHCLIENT&#x3D;yes就行了。<br>其中发现问题： 我的ibm thinkpad x60无法在家里自动获取网线dhcp，怎么弄都不行但手工指定IP可以连，估计是dhcpcd问题，手工改为dhclient解决。最新版已经解决这个问题。</p>
+<p>5.安装显卡驱动xf86-video-intel,安装mesa支持3d，其它调整以后再说<br>6.安装 bash-completion,echo source &#x2F;etc&#x2F;bash_completion &gt;&gt;&#x2F;etc&#x2F;profile<br>7.安装sudo 并 visudo<br>8.新建用户<br>9.安装xorg<br>pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils<br>pacman -S mesa  支持3D<br>pacman -S xorg-twm xorg-xclock xterm 测试环境 我试过先装fluxbox,其实可以不装这个<br>10.安装触摸板<br>pacman -S xf86-input-synaptics<br>11.安装fluxbox并设置<br>12.安装dbus,新版fcitx需要dbus支持<br>13.安装设置fcitx<br>14.安装chromium<br>15.安装AUR<br>最简单安装Yaourt的方式是添加Yaourt源至您的 &#x2F;etc&#x2F;pacman.conf:<br>[archlinuxfr]<br>Server &#x3D; <a target="_blank" rel="noopener" href="http://repo.archlinux.fr/x86_64">http://repo.archlinux.fr/x86_64</a><br>同步并安装：acman -Syu yaourt</p>
+<p>16.配置pacman使用aria2进行多线程下载</p>
+<p>pacman -S aria2<br>在&#x2F;etc&#x2F;pacman.conf中加入以下代码：</p>
+<p>XferCommand &#x3D; &#x2F;usr&#x2F;bin&#x2F;aria2c -s 5 %u<br>其中-s 5 表示使用5个线程，%u表示url代码</p>
+<p>配置：</p>
+<ol>
+<li><p>新版archlinux已经有flashplugin包，直接pacman安装</p>
+</li>
+<li><p>goagent配置</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages.php?ID=48201">https://aur.archlinux.org/packages.php?ID=48201</a></p>
+<p>上面下载tarball文件，解压，进入目录</p>
+<p>先安装git</p>
+<p>pacman -S git<br>然后</p>
+<p>su<br>makepkg -s –asroot<br>pacman -U goagent-git-xxxx-i686.pkg.tar.xz<br>至于申请过程，跟windows上面一样，由于我在windows上一直有使用，所以只需要配置gogent就行了。</p>
+<p>配置文件在&#x2F;etc&#x2F;goagent,修改[gae]下的appid和password<br>然后编辑&#x2F;etc&#x2F;rc.conf   DAEMONS&#x3D; ( … goagent …) 以后就可以开机自动启动了</p>
+<p>当然也可以 </p>
+<p>sudo &#x2F;etc&#x2F;rc.d&#x2F;goagent start<br>进行启动</p>
+<p>chromium上面我的是自动同步 SwitchySharp过来的，没有的要自己安装，然后导入下面的配置：</p>
+<p><a target="_blank" rel="noopener" href="http://goagent.googlecode.com/files/SwitchyOptions.bak">http://goagent.googlecode.com/files/SwitchyOptions.bak</a></p>
+<p>3.fluxbox 背景轮换</p>
+<p>pacman -S feh</p>
+<p>如果没有安装，执行fbsetbg会提示你没有适当的图片浏览程序</p>
+<p>打开 ~&#x2F;.fluxbox&#x2F;init文件</p>
+<p>在session.screen0等条目下插入</p>
+<p>session.screen.rootCommand: fbsetbg -c -f -r &#x2F;home&#x2F;photos&#x2F;favorites</p>
+<p>然后把自己喜欢的背景图片扔到 &#x2F;home&#x2F;photos&#x2F;favorites目录下就行了</p>
+<p>4.fluxbox半透明</p>
+<h1 id="pacman-S-xcompmgr"><a href="#pacman-S-xcompmgr" class="headerlink" title="pacman -S xcompmgr"></a>pacman -S xcompmgr</h1><p>然后再编辑~&#x2F;.xinitrc加入 xcompmgr &amp; 就行了。不用再管什么rxvt不能透明等问题，上面的装上就行了，现代的电脑速度不可能连半透明都搞不定，除非是奔三时代的电脑。</p>
+<ol start="5">
+<li>conky安装</li>
+</ol>
+<p>如上，装上后在~&#x2F;.xinitrc加入 conky &amp;。记住要在 startfluxbox前，配置自己搞了</p>
+<ol start="6">
+<li>英文locale下gvim中文显示问题</li>
+</ol>
+<p>修改 ~&#x2F;.vimrc 加入</p>
+<p>set fileencodings&#x3D;utf-8,gbk,ucs-bom,cp936</p>
+<ol start="7">
+<li>fluxbox主题中文化</li>
+</ol>
+<p>我习惯先装这个软件 mlocate 这个软件，它有个好处，就是就算你不会grep它也能让你很快找到文件</p>
+<p>命令为：</p>
+<p>pacman -S mlocate<br>updatedb<br>locate theme.cfg</p>
+<p>就像windows的索引服务，updatedb先建立一个所有文件目录的索引数据，然后locate直接在这个数据找文件</p>
+<p>然后在你的主题目录下，一般在&#x2F;usr&#x2F;share&#x2F;fluxbox的多级子目录下找到theme.cfg这个文件</p>
+<blockquote>
+<p>grep font theme.cfg *font: WenQuanYi BitMap Song-9:Bold menu.frame.font: sans-9:bold menu.title.font: sans-10:bold toolbar.clock.font: sans-9:bold toolbar.workspace.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.focused.font: WenQuanYi BitMap Song-9:bold toolbar.iconbar.unfocused.font: WenQuanYi BitMap Song-9 window.font: sans-8</p>
+</blockquote>
+<p>修改里面的适当font为适当中文字体</p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2012/05/07/2012-archlinux-x86-64-fluxbox-chroumium-rox-setting-with-dropbox/">archlinux x86_64 fluxbox chroumium rox setting with dropbox</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2011/09/02/2011-gma950%E8%B0%83%E8%AF%95xna40%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C%E5%87%BA%E9%94%99/">gma950调试xna4.0代码编译正常运行出错</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@tengdahuang</a> 使用 Hexo 创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 7.0.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>slackware 11 简单服务器配置 - Cogent小站</title>
+
+  
+    <meta name="description" content="slackware 11 系统默认的apache版本为1.3.37,php版本为4.4.4,mysql版本为5.0.24a. 1。apache篇slackware是个及其优秀的发行版，默认配置apache就可以工作了。这里只作少量修改让他支持PHP。 开启httpd服务，如果安装时候选择了httpd服务就不用理了。没有的话#chmod +x &#x2F;etc&#x2F;rc.d&#x2F;rc.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slackware 11 简单服务器配置">
+<meta property="og:url" content="https://www.stth.cc/2007/05/17/2007-slackware-11-%E7%AE%80%E5%8D%95%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Cogent小站">
+<meta property="og:description" content="slackware 11 系统默认的apache版本为1.3.37,php版本为4.4.4,mysql版本为5.0.24a. 1。apache篇slackware是个及其优秀的发行版，默认配置apache就可以工作了。这里只作少量修改让他支持PHP。 开启httpd服务，如果安装时候选择了httpd服务就不用理了。没有的话#chmod +x &#x2F;etc&#x2F;rc.d&#x2F;rc.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2007-05-17T15:55:00.000Z">
+<meta property="article:modified_time" content="2007-05-17T15:55:00.000Z">
+<meta property="article:author" content="TengdaHuang">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="slackware">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="linux,slackware">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/th.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Cogent小站</div><div class="sub normal cap">学海无涯</div><div class="sub hover cap" style="opacity:0"> 技术与修行</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/12/21/2023-js%E6%AD%A3%E5%88%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0/"><span class="title">正则的一些笔记</span></a><a class="item title" href="/2023/12/09/2023-%E5%B0%9D%E8%AF%95Bootstrap5%E5%92%8CSASS/"><span class="title">初步尝试Bootstrap5和SASS</span></a><a class="item title" href="/2023/11/10/2023-Vscode-Vim-%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/"><span class="title">Vscode Vim 一些操作</span></a><a class="item title" href="/2022/12/10/2022-WSL2%E5%AE%89%E8%A3%85%E8%87%AA%E5%AE%9A%E4%B9%89linux%E5%8F%91%E8%A1%8C%E7%89%88%E5%A6%82archlinux%E6%B3%A8%E6%84%8F%E7%82%B9%E5%92%8C%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%882022%EF%BC%89/"><span class="title">WSL2安装自定义linux发行版如archlinux注意点和最佳实践（2022）</span></a><a class="item title" href="/2022/08/26/2022-%E5%8D%87%E7%BA%A7hexo%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88/"><span class="title">升级hexo到最新版</span></a></div></widget>
+
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/linux/">linux</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/linux/slackware/">slackware</a></div><div id="post-meta">
+    <span>发布于&nbsp;<time datetime="2007-05-17T15:55:00.000Z">2007-05-17</time></span>
+    
+    <span>更新于&nbsp;<time datetime="2007-05-17T15:55:00.000Z">2007-05-17</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>slackware 11 简单服务器配置</span></h1>
+<p>slackware 11 系统默认的apache版本为1.3.37,php版本为4.4.4,mysql版本为5.0.24a.</p>
+<p>1。apache篇<br>slackware是个及其优秀的发行版，默认配置apache就可以工作了。这里只作少量修改让他支持PHP。</p>
+<p>开启httpd服务，如果安装时候选择了httpd服务就不用理了。没有的话#chmod +x &#x2F;etc&#x2F;rc.d&#x2F;rc.httpd</p>
+<p>修改httpd.conf<br>ServerAdmin <a href="mailto:&#120;&#x78;&#64;&#109;&#x79;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#120;&#x78;&#64;&#109;&#x79;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#109;</a> (改为你的e－mail)<br>ServerName 192.168.0.3 （有域名改成域名，没域名改为你的ip）<br><IfModule mod_dir.c><br>DirectoryIndex index.html index.htm index.php<br></IfModule><br>Include &#x2F;etc&#x2F;apache&#x2F;mod_php.conf （开启php支持）<br>Include &#x2F;etc&#x2F;apache&#x2F;mod_ssl.conf （开启ssl支持）</p>
+<p>这是基本支持php的web服务器。业余玩玩还可以，安全性，高效性我不提供保证。因为我架webserver是个人玩的。</p>
+<p>2.vsftp篇</p>
+<p>修改&#x2F;etc&#x2F;vsftpd.conf<br>anonymous_enable&#x3D;YES ;开启匿名登陆<br>write_enable&#x3D;YES<br>anon_upload_enable&#x3D;YES ;开启匿名上传<br>#anon_mkdir_write_enable&#x3D;YES ；匿名用户建文件夹权限，自己绝定是否开启<br>chown_uploads&#x3D;YES<br>chown_username&#x3D;sky ；这里改成你的用户名。呵呵不然别人上传的文件你没权限。<br>ftpd_banner&#x3D;Welcome to blah FTP service. ；欢迎<br>listen&#x3D;YES<br>其他选项自己看着改</p>
+<p>启动vsftpd<br>#vsftpd &amp;</p>
+<p>vsftpd自启动<br>修改&#x2F;etc&#x2F;rc.d&#x2F;rc.local<br>添加<br>#vsftpd<br>vsftpd&amp;</p>
+<p>ok了！ftp目录下建立一个pub（发布，权限设为755），一个incoming（上传，权限设成777）</p>
+<p>3.mysql篇</p>
+<p>1.确认开启了mysqld服务，如果没有就#chmod +x &#x2F;etc&#x2F;rc.d&#x2F;rc.mysqld<br>$su<br>#su mysql<br>$mysql_install_db<br>2重启mysqld或者重启pc<br>3设置mysql root 密码<br>$su<br>#su mysql<br>$mysqladmin -u root password “你的密码”<br>4建个db测试下<br>$mysqladmin -u root -p create 数据库名<br>输入你的密码<br>5查看新建的db<br>$mysqlshow -u root -p<br>输入密码<br>看见你刚才建的db了就ok了！<br>6. 安装phpMyAdmin<br>#tar jxvf phpMyAdmin-2.10.1-all-languages.tar.bz2<br>#mv phpMyAdmin-2.10.1-all-languages phpMyAdmin<br>#cp phpMyAdmin &#x2F;var&#x2F;www&#x2F;htdocs&#x2F;<br>7.设置phpMyAdmin<br>#cd &#x2F;var&#x2F;www&#x2F;htdocs&#x2F;phpMyadmin<br>#mkdir config<br>#chmod +rw config<br>访问<a target="_blank" rel="noopener" href="https://127.0.0.1/phpMyAdmin/scripts/setup.php">https://127.0.0.1/phpMyAdmin/scripts/setup.php</a><br>add server<br>User for config auth: root<br>Password for config auth: root<br>update<br>save<br>#cp config&#x2F;config.ini.php .&#x2F;<br>测试访问<a target="_blank" rel="noopener" href="https://127.0.0.1/phpMyAdmin/index.php%EF%BC%8C%E6%88%90%E5%8A%9F%EF%BC%81">https://127.0.0.1/phpMyAdmin/index.php，成功！</a></p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2007/05/20/2007-%E5%9C%A8slackware-11-0%E4%B8%BAapache%E6%B7%BB%E5%8A%A0mod-python/">在slackware 11.0为apache添加mod_python</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2007/05/17/2007-slackware%E5%88%A9%E7%94%A8%E5%88%AB%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88%E4%B8%AD%E7%9A%84RPM%E5%8C%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">slackware利用别的发行版中的RPM包安装软件</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@tengdahuang</a> 使用 Hexo 创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
